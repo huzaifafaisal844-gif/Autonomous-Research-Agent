@@ -1,23 +1,48 @@
 import ast
+import os
 import operator
 import requests
 from bs4 import BeautifulSoup
 from duckduckgo_search import DDGS
 
-def search_web(query: str, max_results: int = 3) -> str:
+def search_web_ddg(query: str, max_results: int = 3) -> str:
     """Searches the web using DuckDuckGo and returns a summary of results."""
     try:
         results = DDGS().text(query, max_results=max_results)
         if not results:
             return "No results found."
-        
+
         formatted_results = []
         for r in results:
             formatted_results.append(f"Title: {r.get('title')}\nSnippet: {r.get('body')}\nLink: {r.get('href')}")
-        
+
         return "\n\n---\n\n".join(formatted_results)
     except Exception as e:
         return f"Error performing search: {e}"
+
+def search_web_tavily(query: str, max_results: int = 3) -> str:
+    """Searches the web using Tavily and returns a summary of results."""
+    try:
+        from tavily import TavilyClient
+        client = TavilyClient()
+        response = client.search(query=query, max_results=max_results)
+        results = response.get("results", [])
+        if not results:
+            return "No results found."
+
+        formatted_results = []
+        for r in results:
+            formatted_results.append(f"Title: {r.get('title')}\nSnippet: {r.get('content')}\nLink: {r.get('url')}")
+
+        return "\n\n---\n\n".join(formatted_results)
+    except Exception as e:
+        return f"Error performing search: {e}"
+
+def search_web(query: str, max_results: int = 3) -> str:
+    """Searches the web using Tavily (if TAVILY_API_KEY is set) or DuckDuckGo."""
+    if os.environ.get("TAVILY_API_KEY"):
+        return search_web_tavily(query, max_results)
+    return search_web_ddg(query, max_results)
 
 def calculate(expression: str) -> str:
     """
