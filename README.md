@@ -1,4 +1,4 @@
-# Autonomous Research Agent 🤖
+# Autonomous Research Agent 
 
 > An autonomous, multi-step reasoning AI agent built from scratch in Python that dynamically searches the web, solves problems, and remembers context across sessions.
 
@@ -6,7 +6,7 @@ Building AI applications has moved beyond simple wrappers and into the era of **
 
 ---
 
-## 🌟 Key Features
+##  Key Features
 
 *   **Native Desktop GUI (NEW):** A smooth, multithreaded `CustomTkinter` desktop application that visualizes the agent's Thought/Action loop in real-time.
 *   **Custom ReAct Loop:** Parses internal thoughts and commands native Python functions to execute real-world tasks.
@@ -14,7 +14,7 @@ Building AI applications has moved beyond simple wrappers and into the era of **
 *   **Live Web Capabilities:** Bypasses LLM knowledge cutoffs by leveraging DuckDuckGo for live internet searches and BeautifulSoup to scrape and read active webpages.
 *   **Sandboxed Evaluator:** Calculates math strings locally to solve logic and arithmetic tasks without hallucinating.
 
-## 🏗️ Architecture
+##  Architecture
 
 1.  **`gui.py` - Desktop App:** A modern `CustomTkinter` UI that runs the agent in a background thread to prevent freezing.
 2.  **`main.py` - CLI App:** Powers the beautiful `Rich` terminal interface.
@@ -23,7 +23,7 @@ Building AI applications has moved beyond simple wrappers and into the era of **
 5.  **`src/memory.py` - The Hippocampus:** A wrapper around ChromaDB allowing semantic memory storage.
 6.  **`src/tools.py` - The Hands:** Pure python tools (`search_web`, `read_webpage`, `calculate`).
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 *   Python 3.9+
@@ -70,7 +70,7 @@ python gui.py
 python main.py
 ```
 
-## 🛠️ Tech Stack
+##  Tech Stack
 *   **LLM Provider:** Google Gemini Flash (`google-genai`)
 *   **GUI & CLI:** CustomTkinter (`customtkinter`), Rich (`rich`)
 *   **Vector DB:** ChromaDB (`chromadb`)
