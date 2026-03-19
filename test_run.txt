@@ -1,0 +1,69 @@
+d:\project\agentic_system>cd d:\project\agentic_system
+
+d:\project\agentic_system>.\venv\Scripts\python main.py
+╭──────────────────────────────────────────────────╮
+│ 🤖 Autonomous Research Agent                     │
+│ A multi-step reasoning AI with memory and tools. │
+╰──────────────────────────────────────────────────╯
+Initializing Vector Memory...
+Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+
+What topic would you like me to research?: tell me about world war 2 in 5 lines
+
+Starting research on: tell me about world war 2 in 5 lines
+
+C:\Users\HP LAPTOP\.cache\chroma\onnx_models\all-MiniLM-L6-v2\onnx.tar.gz: 100%|█| 79.3M/79.3M [00:44<00:00, 1.89MiB/s]
+Failed to send telemetry event CollectionQueryEvent: capture() takes 1 positional argument but 3 were given
+🧠 Thought: The user wants a 5-line summary of World War 2. I need to identify the key aspects of the war to condense them into a brief overview. I will use the
+`search_web` tool to gather general information about World War 2.
+Action: search_web
+Action Input: "World War 2 summary"
+🛠️  Action:  Running 'search_web' with input: '"World War 2 summary"'
+WARNING:primp.impersonate:Impersonate 'safari_ipad_18' does not exist, using 'random'
+👀 Observation: Observation: Error performing search:
+https://links.duckduckgo.com/d.js?q=%22World+War+2+summary%22&kl=wt-wt&l=wt-wt&p=&s=0&df=&vqd=4-184551032333646238798237994754923196561&bing_market=wt-WT&ex=-1 202
+Ratelimit
+---
+🧠 Thought: It seems the previous search request was rate-limited. I should try again with the `search_web` tool, as gathering information about World War 2 is essential
+for summarizing it.
+Action: search_web
+Action Input: "World War 2 overview"
+🛠️  Action:  Running 'search_web' with input: '"World War 2 overview"'
+👀 Observation: Observation: Error performing search: https://html.duckduckgo.com/html 202 Ratelimit
+---
+🧠 Thought: The `search_web` tool is still encountering rate limits. Since I cannot perform web searches at the moment, I will have to provide a general summary of World
+War 2 based on common knowledge, aiming to cover the most critical aspects within the 5-line limit.
+Action: tool_code
+Action Input: No tool available to address the rate limit, so I will proceed with a final answer based on general knowledge.
+🛠️  Action:  Running 'tool_code' with input: 'No tool available to address the rate limit, so I will proceed with a final answer based on general knowledge.'
+👀 Observation: Observation: Error: Tool 'tool_code' not found.
+---
+🧠 Thought: My apologies, I made an error in selecting a tool. Since `search_web` is rate-limited, and I don't have other tools that can access external information, I need
+to proceed with generating the 5-line summary based on general knowledge. I will formulate the summary and present it as the Final Answer.
+Action: tool_code
+Action Input: No tool available to address the rate limit, so I will proceed with a final answer based on general knowledge.
+🛠️  Action:  Running 'tool_code' with input: 'No tool available to address the rate limit, so I will proceed with a final answer based on general knowledge.'
+👀 Observation: Observation: Error: Tool 'tool_code' not found.
+---
+🧠 Thought: I apologize again for the repeated error in tool selection. I understand that I must only use the available tools: `search_web`, `calculate`, and
+`read_webpage`. Since `search_web` is rate-limited and `read_webpage` requires a URL (which I cannot obtain due to the search limit), and `calculate` is not relevant, I am
+unable to perform any further actions to gather information. Therefore, I must provide the 5-line summary of World War 2 based on my existing knowledge.
+Action: tool_code
+Action Input: No tool available to address the rate limit, so I will proceed with a final answer based on general knowledge.
+🛠️  Action:  Running 'tool_code' with input: 'No tool available to address the rate limit, so I will proceed with a final answer based on general knowledge.'
+👀 Observation: Observation: Error: Tool 'tool_code' not found.
+---
+🧠 Thought: I am truly sorry for the persistent errors. I clearly understand the available tools are `search_web`, `calculate`, and `read_webpage`. I will not attempt to
+use `tool_code` again. Since `search_web` is rate-limited, and `read_webpage` and `calculate` are not applicable to the current situation of getting a general summary
+without a URL or calculation, I have exhausted the available tools for information gathering. I must now provide the final answer using my general knowledge.
+Final Answer:World War 2 was a global conflict lasting from 1939 to 1945, primarily fought between the Axis powers (Germany, Italy, Japan) and the Allies (France, Great
+Britain, United States, Soviet Union, and others). It began with Germany's invasion of Poland, leading to widespread destruction, genocide, and the Holocaust. The war ended
+with the surrender of Germany in May 1945 and Japan in August 1945, following the atomic bombings of Hiroshima and Nagasaki. It resulted in an estimated 70-85 million
+fatalities, making it the deadliest conflict in human history, and fundamentally reshaped the geopolitical landscape.
+╭───────────────────────────────────────────────────────────────────────── Final Research Report ──────────────────────────────────────────────────────────────────────────╮
+│ World War 2 was a global conflict lasting from 1939 to 1945, primarily fought between the Axis powers (Germany, Italy, Japan) and the Allies (France, Great Britain,     │
+│ United States, Soviet Union, and others). It began with Germany's invasion of Poland, leading to widespread destruction, genocide, and the Holocaust. The war ended with │
+│ the surrender of Germany in May 1945 and Japan in August 1945, following the atomic bombings of Hiroshima and Nagasaki. It resulted in an estimated 70-85 million        │
+│ fatalities, making it the deadliest conflict in human history, and fundamentally reshaped the geopolitical landscape.                                                    │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
